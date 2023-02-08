@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexstyle.css">
+    <title>BowSer</title>
+</head>
+<body style="background-color: gray;">
+    <div class="nav">
+            <div class="nav-item" id="youtube" style="padding: 10px;"><a href="https:\\www.youtube.com"  target="_blank"><i class="fa-solid fa-play"></i></a></div>
+            <div class="nav-item" id="music" style="padding: 10px;"><a href="https:\\music.youtube.com"  target="_blank"><i class="fa-solid fa-music"></i></a></div>
+            <div class="nav-item" id="discogs" style="padding: 10px;"><a href="https:\\www.discogs.com"  target="_blank"><i class="fa-solid fa-record-vinyl"></i></a></div>
+            <div class="nav-item" id="drive" style="padding: 10px;"><a href="https:\\drive.google.com" target="_blank"><i class="fa-brands fa-google-drive"></i></a></div>
+            <div class="nav-item" id="amazon" style="padding: 10px;"><a href="https:\\www.amazon.de" target="_blank"><i class="fa-brands fa-amazon"></i></a></div>
+    </div>
+    <div class="site-info">
+        <div id="tab1" style="font-weight: 700;"></div>
+    </div>
+    <div class="search-bars">
+        <h1>BowSer</h1>
+        <input type="text" placeholder="Google Search" id="googlesearch">
+    </div>
+    <div class="credits">by bluw <a href="https://github.com/stevemindy">visit my github</a></div>
+
+    <script id="googlesearchscript">
+
+        let input = document.getElementById('googlesearch');
+
+    input.addEventListener('keyup', (e) => {
+    if(e.keyCode === 13) {
+        console.log(e.target.value)
+        const stringtosearch = e.target.value
+        window.open("https://www.google.com/search?q="+ stringtosearch, "_blank")
+    }
+    });
+
+
+    </script>
+
+    <script>
+        let youtube = document.getElementById('youtube');
+        let music = document.getElementById('music');
+        let discogs = document.getElementById('discogs');
+        let drive = document.getElementById('drive');
+        let amazon = document.getElementById('amazon');
+        let invis = document.getElementById('tab1');
+        invis.style.display = "none";
+
+        youtube.onmouseover = function(){
+            console.log('done');
+            invis.innerHTML = "Youtube";
+            invis.style.color = "red";
+            invis.style.display = "block";
+            invis.style.animation = "fonts cubic-bezier(0.075, 0.82, 0.165, 1) 2s";
+        }
+        youtube.onmouseleave = function(){
+            invis.style.animation = "fontsout cubic-bezier(0.075, 0.82, 0.165, 1) 0.25s";
+            setTimeout(() => {
+                invis.style.display = "none";
+                console.log("Removed");
+            }, "250")
+        }
+
+        music.onmouseover = function(){
+            console.log('done');
+            invis.innerHTML = "Youtube Music";
+            invis.style.display = "block";
+            invis.style.color = "darkred";
+            invis.style.animation = "fonts cubic-bezier(0.075, 0.82, 0.165, 1) 2s";
+        }
+        music.onmouseleave = function(){
+            invis.style.animation = "fontsout cubic-bezier(0.075, 0.82, 0.165, 1) 0.25s";
+            setTimeout(() => {
+                invis.style.display = "none";
+                console.log("Removed");
+            }, "250")
+        }
+
+        discogs.onmouseover = function(){
+            console.log('done');
+            invis.innerHTML = "Discogs";
+            invis.style.display = "block";
+            invis.style.color = "silver";
+            invis.style.animation = "fonts cubic-bezier(0.075, 0.82, 0.165, 1) 2s";
+        }
+        discogs.onmouseleave = function(){
+            invis.style.animation = "fontsout cubic-bezier(0.075, 0.82, 0.165, 1) 0.25s";
+            setTimeout(() => {
+                invis.style.display = "none";
+                console.log("Removed");
+            }, "250")
+        }
+
+        drive.onmouseover = function(){
+            console.log('done');
+            invis.innerHTML = "Drive";
+            invis.style.display = "block";
+            invis.style.color = "green";
+            invis.style.animation = "fonts cubic-bezier(0.075, 0.82, 0.165, 1) 2s";
+        }
+        drive.onmouseleave = function(){
+            invis.style.animation = "fontsout cubic-bezier(0.075, 0.82, 0.165, 1) 0.25s";
+            setTimeout(() => {
+                invis.style.display = "none";
+                console.log("Removed");
+            }, "250")
+        }
+
+        amazon.onmouseover = function(){
+            console.log('done');
+            invis.innerHTML = "Amazon";
+            invis.style.display = "block";
+            invis.style.color = "yellow";
+            invis.style.animation = "fonts cubic-bezier(0.075, 0.82, 0.165, 1) 2s";
+        }
+        amazon.onmouseleave = function(){
+            invis.style.animation = "fontsout cubic-bezier(0.075, 0.82, 0.165, 1) 0.25s";
+            setTimeout(() => {
+                invis.style.display = "none";
+                console.log("Removed");
+            }, "250")
+        }
+    </script>
+</body>
+</html>
